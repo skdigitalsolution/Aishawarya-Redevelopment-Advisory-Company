@@ -1,0 +1,1 @@
+import Reveal from './Reveal';export default function SectionHeading({eyebrow,title,description,center=false}){return <Reveal className={`section-heading ${center?'centered':''}`}><span className="eyebrow">{eyebrow}</span><h2>{title}</h2>{description&&<p>{description}</p>}</Reveal>}
