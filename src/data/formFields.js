@@ -1,0 +1,56 @@
+export const contactFields = [
+  {
+    name: 'fullName',
+    label: 'Full Name',
+    required: true,
+    autoComplete: 'name',
+  },
+  {
+    name: 'mobile',
+    label: 'Mobile Number',
+    required: true,
+    type: 'tel',
+    autoComplete: 'tel',
+    inputMode: 'numeric',
+    maxLength: 14,
+  },
+  {
+    name: 'email',
+    label: 'Email Address',
+    required: true,
+    type: 'email',
+    autoComplete: 'email',
+  },
+  {
+    name: 'society',
+    label: 'Society / Project Name',
+    required: true,
+  },
+  {
+    name: 'location',
+    label: 'Location',
+    required: true,
+    autoComplete: 'address-level2',
+  },
+  {
+    name: 'enquiryType',
+    label: 'Enquiry Type',
+    required: true,
+    type: 'select',
+    options: [
+      'Society Redevelopment',
+      'Self-Redevelopment',
+      'Land Banking & Advisory',
+      'Legal & Regulatory Advisory',
+      'Project Consultancy',
+      'Other',
+    ],
+  },
+  {
+    name: 'message',
+    label: 'Message',
+    required: true,
+    type: 'textarea',
+    maxLength: 1500,
+  },
+];

@@ -1,0 +1,90 @@
+@import 'tailwindcss';
+@theme {
+  --color-navy: #0b1f4b;
+  --color-navy-dark: #07142f;
+  --color-gold: #d4a537;
+  --color-gold-light: #f0cf7a;
+  --color-marble: #f7f6f2;
+  --font-sans: 'Inter', sans-serif;
+  --font-heading: 'Playfair Display', serif;
+  --shadow-card: 0 8px 24px rgb(7 20 47 / 9%);
+}
+@layer base {
+  html {
+    @apply scroll-smooth scroll-pt-24;
+  }
+  body {
+    @apply m-0 min-w-0 bg-marble font-sans text-navy antialiased;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-heading;
+  }
+  button,
+  a,
+  input,
+  textarea {
+    @apply focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold;
+  }
+  button {
+    @apply cursor-pointer;
+  }
+  img {
+    @apply max-w-full;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@layer base {
+  body {
+    background-image:
+      linear-gradient(120deg, transparent 45%, #d4a5370b 45.1%, transparent 45.3%),
+      linear-gradient(25deg, #ffffffaa 15%, transparent 55%, #cbd5e117 70%, #ffffffbb 90%);
+    background-size:
+      650px 530px,
+      700px 850px;
+  }
+}
+
+@layer components {
+  .section-wrap {
+    @apply mx-auto max-w-7xl px-5 py-14 sm:px-8 lg:py-20;
+  }
+  .nav-link {
+    @apply relative after:absolute after:right-0 after:bottom-1 after:left-0 after:h-px after:origin-left after:scale-x-0 after:bg-gold-light after:transition-transform hover:after:scale-x-100 focus-visible:after:scale-x-100;
+  }
+  .nav-link[aria-current='page'] {
+    @apply after:scale-x-100;
+  }
+}
+@layer base {
+  [id] {
+    scroll-margin-top: 7rem;
+  }
+  input,
+  textarea,
+  select {
+    min-width: 0;
+  }
+  select {
+    max-width: 100%;
+  }
+  a {
+    overflow-wrap: anywhere;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
