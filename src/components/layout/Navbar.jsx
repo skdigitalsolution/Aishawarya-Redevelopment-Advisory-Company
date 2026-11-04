@@ -5,6 +5,7 @@ import { content as c } from '../../data/content';
 import { navigation } from '../../data/navigation';
 import NavDropdown from './NavDropdown';
 import MobileMenu from './MobileMenu';
+import BrandLogo from './BrandLogo';
 /** Sticky navigation with shared desktop/mobile route data. No props. */
 export default function Navbar() {
   const [open, setOpen] = useState(null);
@@ -54,15 +55,9 @@ export default function Navbar() {
       <a className="sr-only focus:not-sr-only focus:absolute focus:z-60 focus:bg-white focus:p-4 focus:text-navy" href="#main">
         {c.ui.skip}
       </a>
-      <div className="mx-auto flex h-20 max-w-7xl items-center gap-4 px-4 sm:px-8">
+      <div className="mx-auto flex h-24 max-w-7xl items-center gap-4 px-4 sm:px-8">
         <Link to="/" aria-label={c.company.name} className="flex min-w-0 items-center gap-3">
-          <img
-            src={c.company.logo}
-            alt={c.company.logoAlt}
-            width="52"
-            height="52"
-            className="size-12 shrink-0 -rotate-90 rounded-full bg-white object-contain"
-          />
+          <BrandLogo />
           <span className="block">
             <span className="block font-heading text-lg tracking-wide text-gold-light sm:text-xl">{c.company.shortName}</span>
             <span className="block max-w-44 text-[9px] leading-relaxed text-gold-light/85 sm:max-w-52 sm:text-[10px]">

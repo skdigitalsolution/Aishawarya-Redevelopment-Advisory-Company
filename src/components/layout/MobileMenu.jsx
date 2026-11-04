@@ -11,7 +11,7 @@ export default function MobileMenu({ onClose }) {
     <nav
       id="mobile-navigation"
       aria-label="Mobile navigation"
-      className="max-h-[calc(100dvh-5rem)] overflow-y-auto border-t border-white/10 bg-navy-dark px-5 pt-3 pb-6 xl:hidden"
+      className="max-h-[calc(100dvh-6rem)] overflow-y-auto border-t border-white/10 bg-navy-dark px-5 pt-3 pb-6 xl:hidden"
     >
       {navigation.map((item, i) => (
         <div key={item.label}>
@@ -64,3 +64,4 @@ export default function MobileMenu({ onClose }) {
     </nav>
   );
 }
+

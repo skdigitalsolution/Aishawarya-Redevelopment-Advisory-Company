@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
 import { content as c } from '../../data/content';
+import BrandLogo from './BrandLogo';
 /** Brand footer with verified contact details and real destination links. */
 export default function Footer() {
   return (
@@ -8,14 +9,7 @@ export default function Footer() {
       <div className="mx-auto grid max-w-7xl gap-9 md:grid-cols-2 xl:grid-cols-[1.4fr_0.8fr_1fr_1.3fr]">
         <div>
           <Link to="/" className="flex items-center gap-3">
-            <img
-              src={c.company.logo}
-              width="64"
-              height="64"
-              alt={c.company.logoAlt}
-              loading="lazy"
-              className="size-16 -rotate-90 rounded-full bg-white"
-            />
+            <BrandLogo footer />
             <span className="max-w-52 font-heading text-lg text-gold-light">{c.company.name}</span>
           </Link>
           <p className="mt-4 max-w-sm text-xs leading-6 text-white/65">{c.footer.description}</p>
