@@ -11,7 +11,7 @@ export default function MobileMenu({ onClose }) {
     <nav
       id="mobile-navigation"
       aria-label="Mobile navigation"
-      className="max-h-[calc(100dvh-6rem)] overflow-y-auto border-t border-white/10 bg-navy-dark px-5 pt-3 pb-6 xl:hidden"
+      className="max-h-[calc(100dvh-6rem)] overflow-y-auto border-t border-gold/20 bg-white px-5 pt-3 pb-6 xl:hidden"
     >
       {navigation.map((item, i) => (
         <div key={item.label}>
@@ -22,7 +22,7 @@ export default function MobileMenu({ onClose }) {
                 aria-expanded={expanded === i}
                 aria-controls={`mobile-group-${i}`}
                 onClick={() => setExpanded(expanded === i ? null : i)}
-                className={`flex min-h-12 w-full items-center justify-between gap-3 rounded-lg px-3 text-left text-sm transition-colors ${expanded === i ? 'bg-slate-700 font-semibold text-gold-light' : 'text-white hover:bg-gold-light hover:text-navy-dark'}`}
+                className={`flex min-h-12 w-full items-center justify-between gap-3 rounded-lg px-3 text-left text-sm transition-colors ${expanded === i ? 'bg-slate-700 font-semibold text-gold-light' : 'text-navy hover:bg-gold-light hover:text-navy-dark'}`}
               >
                 {item.label}
                 <ChevronDown className={`size-4 ${expanded === i ? 'rotate-180 text-gold-light' : 'text-current'}`} />
@@ -47,7 +47,7 @@ export default function MobileMenu({ onClose }) {
               to={item.to}
               onClick={onClose}
               aria-current={pathname === item.to ? 'page' : undefined}
-              className={`block py-4 text-sm ${pathname === item.to ? 'text-gold-light' : 'text-white'}`}
+              className={`block py-4 text-sm ${pathname === item.to ? 'text-[#866019]' : 'text-navy'}`}
             >
               {item.label}
             </Link>

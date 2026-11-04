@@ -30,14 +30,14 @@ export default function HeroSection() {
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(255,253,247,0.98)_0%,rgba(255,253,247,0.94)_32%,rgba(255,253,247,0.70)_52%,rgba(255,253,247,0.08)_78%)]" />
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(0deg,rgba(255,253,247,0.97)_0%,transparent_32%)]" />
 
-      <div className="relative mx-auto max-w-7xl px-5 pb-6 pt-8 sm:px-8 lg:pb-8 lg:pt-12">
+      <div className="relative mx-auto max-w-7xl px-5 pb-6 pt-3 sm:px-8 lg:pb-8 lg:pt-5">
         <motion.div
           initial={reduce ? false : { opacity: 0, y: 22 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: reduce ? 0 : 0.65 }}
-          className="flex flex-col items-start gap-8 pb-6 pt-4 lg:min-h-[500px] lg:flex-row lg:items-center lg:justify-between"
+          className="flex flex-col items-start gap-8 pb-6 pt-0 lg:flex-row lg:items-start lg:justify-between"
         >
-          <div className="max-w-[660px] rounded-2xl bg-white/90 p-5 sm:p-7 lg:bg-transparent lg:p-0">
+          <div className="max-w-[660px] rounded-2xl bg-white/90 p-5 sm:p-6 lg:bg-transparent lg:p-0">
             <p className="mb-5 max-w-xl text-[11px] leading-6 font-semibold tracking-[0.16em] text-[#866019] sm:text-xs">
               {c.home.heroLabel}
             </p>

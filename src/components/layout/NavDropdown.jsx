@@ -57,7 +57,7 @@ export default function NavDropdown({ item, open, onOpen, onClose }) {
             requestAnimationFrame(() => group.current?.querySelector('a')?.focus());
           }
         }}
-        className={`nav-link flex min-h-12 items-center gap-1 rounded-lg px-2 text-[11px] font-medium transition-colors ${open ? 'bg-gold-light text-navy-dark' : active ? 'text-gold-light hover:bg-gold-light hover:text-navy-dark' : 'text-white/85 hover:bg-gold-light hover:text-navy-dark'}`}
+        className={`nav-link flex min-h-12 items-center gap-1 rounded-lg px-2 text-[11px] font-medium transition-colors ${open ? 'bg-gold-light text-navy-dark' : active ? 'text-[#866019] hover:bg-gold-light hover:text-navy-dark' : 'text-navy/85 hover:bg-gold-light hover:text-navy-dark'}`}
       >
         {item.label}
         <ChevronDown className={`size-3 transition ${open ? 'rotate-180' : ''}`} aria-hidden="true" />

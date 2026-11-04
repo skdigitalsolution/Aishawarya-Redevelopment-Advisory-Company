@@ -50,7 +50,7 @@ export default function Navbar() {
   return (
     <header
       ref={ref}
-      className={`sticky top-0 z-50 border-b border-gold/50 bg-navy-dark/98 text-white backdrop-blur-lg transition-shadow ${scrolled ? 'shadow-lg' : ''}`}
+      className={`sticky top-0 z-50 border-b border-gold/50 bg-white text-navy transition-shadow ${scrolled ? 'shadow-lg' : ''}`}
     >
       <a className="sr-only focus:not-sr-only focus:absolute focus:z-60 focus:bg-white focus:p-4 focus:text-navy" href="#main">
         {c.ui.skip}
@@ -59,8 +59,8 @@ export default function Navbar() {
         <Link to="/" aria-label={c.company.name} className="flex min-w-0 items-center gap-3">
           <BrandLogo />
           <span className="block">
-            <span className="block font-heading text-[22px] leading-tight font-semibold tracking-wide text-gold-light sm:text-2xl">{c.company.shortName}</span>
-            <span className="mt-1 block max-w-44 text-[11px] leading-4 font-medium text-gold-light sm:max-w-48 sm:text-xs">
+            <span className="block font-heading text-[22px] leading-tight font-semibold tracking-wide text-[#866019] sm:text-2xl">{c.company.shortName}</span>
+            <span className="mt-1 block max-w-44 text-[11px] leading-4 font-medium text-[#866019] sm:max-w-48 sm:text-xs">
               {c.company.descriptor}
             </span>
           </span>
@@ -74,7 +74,7 @@ export default function Navbar() {
                 key={item.label}
                 to={item.to}
                 aria-current={location.pathname === item.to ? 'page' : undefined}
-                className={`nav-link py-4 text-[11px] font-medium ${location.pathname === item.to ? 'text-gold-light' : 'text-white/85'}`}
+                className={`nav-link py-4 text-[11px] font-medium ${location.pathname === item.to ? 'text-[#866019]' : 'text-navy/85'}`}
               >
                 {item.label}
               </Link>
@@ -95,7 +95,7 @@ export default function Navbar() {
           aria-controls="mobile-navigation"
           aria-label={mobile ? c.ui.closeMenu : c.ui.menu}
           onClick={() => setMobile(!mobile)}
-          className="ml-auto rounded-lg p-3 text-gold-light sm:ml-0 xl:hidden"
+          className="ml-auto rounded-lg p-3 text-[#866019] sm:ml-0 xl:hidden"
         >
           {mobile ? <X /> : <Menu />}
         </button>
