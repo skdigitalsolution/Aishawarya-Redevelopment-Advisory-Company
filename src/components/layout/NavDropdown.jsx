@@ -71,7 +71,7 @@ export default function NavDropdown({ item, open, onOpen, onClose }) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 4 }}
             transition={{ duration: reduced ? 0 : 0.15 }}
-            className="absolute top-full left-0 z-50 w-64 rounded-xl border border-gold bg-gold-light p-2 text-navy-dark shadow-xl"
+            className="absolute top-full left-0 z-50 w-64 rounded-xl border border-gold bg-slate-700 p-2 text-white shadow-xl"
           >
             {item.items.map((link) => (
               <Link
@@ -79,7 +79,7 @@ export default function NavDropdown({ item, open, onOpen, onClose }) {
                 to={link.to}
                 onClick={onClose}
                 aria-current={location.pathname === link.to ? 'page' : undefined}
-                className={`block rounded-lg px-4 py-3 text-xs leading-relaxed text-navy-dark transition-colors hover:bg-gold focus:bg-gold ${location.pathname === link.to ? 'bg-gold/40 font-semibold' : 'font-medium'}`}
+                className={`block rounded-lg px-4 py-3 text-xs leading-relaxed text-white transition-colors hover:bg-gold hover:text-navy-dark focus:bg-gold focus:text-navy-dark ${location.pathname === link.to ? 'bg-slate-600 font-semibold text-gold-light' : 'font-medium'}`}
               >
                 {link.label}
               </Link>
