@@ -1,4 +1,5 @@
-export const content = {
+import { withBaseAssets } from './assetPaths.js';
+export const content = withBaseAssets({
   company: {
     name: 'Aishwarya Redevelopment Advisory Company',
     shortName: 'AISHWARYA',
@@ -481,4 +482,4 @@ export const content = {
     contactTitle: 'Contact',
     statsNote: 'Figures are stated in the client-supplied leadership profile.',
   },
-};
+});

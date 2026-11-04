@@ -1,0 +1,1 @@
+import {useCountUp} from '../hooks/useCountUp';export default function StatCounter({number,label,suffix='+'}){const {ref,count}=useCountUp(number);return <div className="stat" ref={ref}><div className="stat-number">{count}{suffix}</div><p>{label}</p></div>}

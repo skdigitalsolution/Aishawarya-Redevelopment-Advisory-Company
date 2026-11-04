@@ -1,4 +1,5 @@
-export const projectData = {
+import { withBaseAssets } from './assetPaths.js';
+export const projectData = withBaseAssets({
   verified: [],
   categories: ['All', 'Residential', 'Commercial', 'Redevelopment', 'Land Advisory'],
   title: 'Verified case studies are being prepared',
@@ -10,4 +11,4 @@ export const projectData = {
   testimonialTitle: 'Client voices, shared with permission',
   testimonialDescription:
     'Approved client testimonials will appear here. We respect the privacy of housing societies and publish feedback only with permission.',
-};
+});

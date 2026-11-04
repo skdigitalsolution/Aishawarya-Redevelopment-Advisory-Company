@@ -1,0 +1,1 @@
+import {motion,useReducedMotion} from 'framer-motion';export default function Reveal({children,className='',delay=0}){const reduced=useReducedMotion();return <motion.div className={className} initial={reduced?false:{opacity:0,y:28}} whileInView={{opacity:1,y:0}} viewport={{once:true,amount:.1}} transition={{duration:.65,ease:[.2,.8,.2,1],delay}}>{children}</motion.div>}

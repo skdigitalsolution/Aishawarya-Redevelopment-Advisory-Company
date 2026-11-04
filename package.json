@@ -7,7 +7,8 @@
     "dev": "vite --configLoader runner --host 127.0.0.1",
     "build": "vite build --configLoader runner",
     "preview": "vite preview --host 127.0.0.1",
-    "test": "node scripts/verify.mjs"
+    "test": "node scripts/verify.mjs",
+    "build:pages": "node scripts/build-pages.mjs"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",

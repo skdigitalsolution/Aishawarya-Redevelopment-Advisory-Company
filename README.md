@@ -43,3 +43,7 @@ Build output is `dist`. The host must serve existing files normally and return `
 ## Verification
 
 `npm test` checks content integrity, nav destinations, service categories, document stages, article slugs, required fields, email/mobile/number validation and handoff encoding. Browser QA covers route rendering, desktop/mobile navigation, process/FAQ controls, forms and horizontal overflow. No real enquiries are sent during QA.
+
+## Existing GitHub repository integration
+
+The original GitHub history, workflow, illustrations and legacy source modules are retained. `npm run build:pages` uses the repository subpath, adjusts client asset URLs and creates `404.html` for GitHub Pages SPA fallback. The workflow uses that command. Normal `npm run build` retains root hosting for Sites. The old Tailwind v3 PostCSS configuration is preserved as `docs/legacy/postcss.config.js.txt`; the current application uses the Tailwind v4 Vite plugin. Generated dependencies are no longer tracked.

@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { seo } from '../data/seo';
 import { articles } from '../data/articles';
 import { content as c } from '../data/content';
-const siteOrigin = 'https://aishwarya-redevelopment-advisory-mumbai.skdigital6666.chatgpt.site';
+const siteOrigin = import.meta.env.VITE_SITE_ORIGIN || 'https://aishwarya-redevelopment-advisory-mumbai.skdigital6666.chatgpt.site';
 /** Apply page-specific search and sharing metadata without another runtime dependency. */
 export function usePageMeta() {
   const { pathname } = useLocation();

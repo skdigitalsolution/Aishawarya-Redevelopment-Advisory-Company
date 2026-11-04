@@ -19,7 +19,7 @@ export default function CompanyIntroSection() {
         </div>
         <figure className="overflow-hidden rounded-2xl border border-gold/30 bg-white p-2 shadow-card">
           <img
-            src="/assets/architecture.webp"
+            src={`${import.meta.env.BASE_URL}assets/architecture.webp`}
             alt="Architectural illustration supplied in the company profile"
             width="1024"
             height="1024"

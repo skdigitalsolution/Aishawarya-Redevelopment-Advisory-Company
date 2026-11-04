@@ -1,4 +1,5 @@
-export const articles = [
+import { withBaseAssets } from './assetPaths.js';
+export const articles = withBaseAssets([
   {
     slug: 'society-redevelopment',
     title: 'Society Redevelopment',
@@ -249,4 +250,4 @@ export const articles = [
     reviewed: '4 November 2026',
     image: '/assets/architecture.webp',
   },
-];
+]);

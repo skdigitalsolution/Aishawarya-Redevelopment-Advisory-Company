@@ -1,0 +1,1 @@
+import {Link} from 'react-router-dom';export default function Brand({light=false}){return <Link to="/" className={`brand ${light?'brand-light':''}`} aria-label="Aishwarya home"><span className="brand-mark">AR</span><span className="brand-title">AISHWARYA <small>REDEVELOPMENT ADVISORY</small></span></Link>}

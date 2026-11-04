@@ -1,5 +1,6 @@
+import { withBaseAssets } from './assetPaths.js';
 /** Client company information. Unapproved sample projects and testimonials are excluded. */
-export const siteData = {
+export const siteData = withBaseAssets({
   company: {
     name: 'Aishwarya Redevelopment Advisory Company',
     displayName: 'AISHWARYA REDEVELOPMENT ADVISORY COMPANY',
@@ -534,4 +535,4 @@ export const siteData = {
     contactIntro: 'Start with a conversation. Share your society’s plans with our team by phone or email.',
     notFoundDescription: 'The page you are looking for could not be found.',
   },
-};
+});
