@@ -22,19 +22,19 @@ export default function MobileMenu({ onClose }) {
                 aria-expanded={expanded === i}
                 aria-controls={`mobile-group-${i}`}
                 onClick={() => setExpanded(expanded === i ? null : i)}
-                className="flex min-h-12 w-full items-center justify-between gap-3 text-left text-sm text-white"
+                className={`flex min-h-12 w-full items-center justify-between gap-3 rounded-lg px-3 text-left text-sm transition-colors ${expanded === i ? 'bg-gold-light font-semibold text-navy-dark' : 'text-white hover:bg-gold-light hover:text-navy-dark'}`}
               >
                 {item.label}
-                <ChevronDown className={`size-4 text-gold-light ${expanded === i ? 'rotate-180' : ''}`} />
+                <ChevronDown className={`size-4 ${expanded === i ? 'rotate-180 text-navy-dark' : 'text-current'}`} />
               </button>
               {expanded === i && (
-                <div id={`mobile-group-${i}`} className="mb-3 border-l border-gold/40 pl-4">
+                <div id={`mobile-group-${i}`} className="mb-3 rounded-b-lg border border-gold bg-gold-light p-2">
                   {item.items.map((link) => (
                     <Link
                       key={link.to}
                       to={link.to}
                       onClick={onClose}
-                      className={`block py-3 text-sm ${pathname === link.to.split(/[?#]/)[0] ? 'text-gold-light' : 'text-white/70'}`}
+                      className={`block rounded-lg px-3 py-3 text-sm text-navy-dark transition-colors hover:bg-gold focus:bg-gold ${pathname === link.to.split(/[?#]/)[0] ? 'bg-gold/40 font-semibold' : 'font-medium'}`}
                     >
                       {link.label}
                     </Link>

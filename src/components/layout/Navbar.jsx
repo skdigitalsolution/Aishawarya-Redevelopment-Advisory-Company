@@ -59,8 +59,8 @@ export default function Navbar() {
         <Link to="/" aria-label={c.company.name} className="flex min-w-0 items-center gap-3">
           <BrandLogo />
           <span className="block">
-            <span className="block font-heading text-lg tracking-wide text-gold-light sm:text-xl">{c.company.shortName}</span>
-            <span className="block max-w-44 text-[9px] leading-relaxed text-gold-light/85 sm:max-w-52 sm:text-[10px]">
+            <span className="block font-heading text-[22px] leading-tight font-semibold tracking-wide text-gold-light sm:text-2xl">{c.company.shortName}</span>
+            <span className="mt-1 block max-w-44 text-[11px] leading-4 font-medium text-gold-light sm:max-w-48 sm:text-xs">
               {c.company.descriptor}
             </span>
           </span>

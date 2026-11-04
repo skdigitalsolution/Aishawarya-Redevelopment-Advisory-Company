@@ -57,7 +57,7 @@ export default function NavDropdown({ item, open, onOpen, onClose }) {
             requestAnimationFrame(() => group.current?.querySelector('a')?.focus());
           }
         }}
-        className={`nav-link flex min-h-12 items-center gap-1 text-[11px] font-medium ${active ? 'text-gold-light' : 'text-white/85'}`}
+        className={`nav-link flex min-h-12 items-center gap-1 rounded-lg px-2 text-[11px] font-medium transition-colors ${open ? 'bg-gold-light text-navy-dark' : active ? 'text-gold-light hover:bg-gold-light hover:text-navy-dark' : 'text-white/85 hover:bg-gold-light hover:text-navy-dark'}`}
       >
         {item.label}
         <ChevronDown className={`size-3 transition ${open ? 'rotate-180' : ''}`} aria-hidden="true" />
@@ -71,7 +71,7 @@ export default function NavDropdown({ item, open, onOpen, onClose }) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 4 }}
             transition={{ duration: reduced ? 0 : 0.15 }}
-            className="absolute top-full left-0 z-50 w-64 rounded-xl border border-gold/30 bg-white p-2 text-navy shadow-xl"
+            className="absolute top-full left-0 z-50 w-64 rounded-xl border border-gold bg-gold-light p-2 text-navy-dark shadow-xl"
           >
             {item.items.map((link) => (
               <Link
@@ -79,7 +79,7 @@ export default function NavDropdown({ item, open, onOpen, onClose }) {
                 to={link.to}
                 onClick={onClose}
                 aria-current={location.pathname === link.to ? 'page' : undefined}
-                className={`block rounded-lg px-4 py-3 text-xs leading-relaxed hover:bg-marble focus:bg-marble ${location.pathname === link.to ? 'font-semibold text-navy' : 'text-navy/70'}`}
+                className={`block rounded-lg px-4 py-3 text-xs leading-relaxed text-navy-dark transition-colors hover:bg-gold focus:bg-gold ${location.pathname === link.to ? 'bg-gold/40 font-semibold' : 'font-medium'}`}
               >
                 {link.label}
               </Link>
