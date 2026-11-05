@@ -4,7 +4,7 @@ import { projectData as p } from '../data/projects';
 import { faqs } from '../data/faqs';
 import Accordion from '../components/common/Accordion';
 import SectionHeading from '../components/ui/SectionHeading';
-import TestimonialCard from '../components/ui/TestimonialCard';
+import TestimonialCarousel from '../components/common/TestimonialCarousel';
 /** Separate client-feedback and FAQ subsections; only approved testimonials render. */
 export default function TestimonialsFaqSection() {
   return (
@@ -15,7 +15,7 @@ export default function TestimonialsFaqSection() {
           <div>
             <h3 className="mb-5 text-2xl">Client testimonials</h3>
             {p.testimonials.length ? (
-              p.testimonials.map((item) => <TestimonialCard key={item.name} testimonial={item} />)
+              <TestimonialCarousel testimonials={p.testimonials} />
             ) : (
               <div className="rounded-2xl border border-navy/10 bg-marble p-7">
                 <MessageSquareQuote className="mb-5 size-8 text-gold" />

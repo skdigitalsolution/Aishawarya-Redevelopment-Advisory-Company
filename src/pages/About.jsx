@@ -3,6 +3,7 @@ import PageHero from '../components/common/PageHero';
 import CompanyIntroSection from '../sections/CompanyIntroSection';
 import CTAButton from '../components/common/CTAButton';
 import FadeIn from '../components/ui/FadeIn';
+import { profileImage } from '../data/profileImages';
 /** Company background, philosophy and anchored vision, mission and values. */
 export default function About() {
   return (
@@ -16,7 +17,7 @@ export default function About() {
       <section className="section-wrap border-t border-navy/10">
         <div className="grid gap-10 md:grid-cols-2">
           <div>
-            <h2 className="text-3xl">Our background</h2>
+            <img src={profileImage('waterfront')} alt="Illustrative Mumbai waterfront supplied in the company profile" width="1280" height="720" loading="lazy" className="mb-6 aspect-[16/9] w-full rounded-xl object-cover" /><h2 className="text-3xl">Our background</h2>
             <p className="mt-5 text-sm leading-7 text-navy/70">{c.company.background}</p>
           </div>
           <div>

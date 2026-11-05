@@ -1,42 +1,17 @@
 import { content as c } from '../data/content';
+import { founderExperience } from '../data/founderExperience';
 import PageHero from '../components/common/PageHero';
-import FounderSection from '../sections/FounderSection';
+import ServiceImageSection from '../components/common/ServiceImageSection';
 import CTAButton from '../components/common/CTAButton';
-import Icon from '../components/ui/Icon';
-/** Detailed profile based on the supplied director introduction. */
 export default function FounderLeadership() {
-  return (
-    <>
-      <PageHero
-        title="Founder & Leadership"
-        label={c.founder.role}
-        description={`${c.founder.name} — leadership focused on clear advice and responsible redevelopment.`}
-      />
-      <FounderSection />
-      <section className="section-wrap">
-        <div className="grid gap-10 lg:grid-cols-2">
-          <div>
-            <h2 className="text-3xl">Advisory specializations</h2>
-            <ul className="mt-6 space-y-4">
-              {c.founder.specializations.map((text) => (
-                <li key={text} className="flex items-start gap-3 border-b border-navy/10 pb-4 text-sm leading-6">
-                  <Icon name="ShieldCheck" className="size-5 shrink-0 text-gold" />
-                  {text}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h2 className="text-3xl">A vision for informed decisions</h2>
-            <p className="mt-5 text-sm leading-7 text-navy/70">{c.founder.vision}</p>
-            <h3 className="mt-8 text-2xl">Leadership philosophy</h3>
-            <p className="mt-4 text-sm leading-7 text-navy/70">{c.founder.philosophy}</p>
-            <div className="mt-8">
-              <CTAButton to="/contact-us">{c.ui.consult}</CTAButton>
-            </div>
-          </div>
-        </div>
-      </section>
-    </>
-  );
+  return <>
+    <PageHero title="Leadership Built on Experience and Trust" label="Founder & Leadership" description="Meet Mr. Sachin Murudkar, Founder & Director of Aishwarya Redevelopment Advisory Company." />
+    <section className="section-wrap grid items-center gap-9 md:grid-cols-[0.7fr_1.3fr]">
+      <figure className="mx-auto w-full max-w-xs overflow-hidden rounded-2xl border border-gold/40 bg-white pt-5 shadow-card"><img src={c.founder.image} alt={c.founder.alt} width="516" height="564" className="h-auto w-full" /><figcaption className="border-t border-gold/30 bg-navy px-5 py-4 text-center text-xs text-white">{c.founder.role}</figcaption></figure>
+      <div><p className="mb-3 text-xs font-semibold tracking-widest text-[#866019] uppercase">Our Founder</p><h2 className="text-3xl font-semibold">{c.founder.name}</h2><p className="mt-4 text-sm leading-7 text-navy/75">Mr. Sachin Murudkar works in Mumbai real estate advisory, redevelopment planning, property records and legal coordination. He helps housing societies and owners organize information, ask the right questions and make better decisions.</p><p className="mt-4 text-sm leading-7 text-navy/75">His leadership brings together member needs, practical development options and the work of independent legal, financial and technical professionals.</p><div className="mt-6"><CTAButton to="/contact-us">Discuss Your Property</CTAButton></div></div>
+    </section>
+    <section className="section-wrap !pt-0"><h2 className="text-3xl font-semibold">Five areas of experience</h2>{founderExperience.map((item, i) => <ServiceImageSection key={item.id} item={item} reverse={i % 2 === 1} />)}</section>
+    <section className="border-y border-gold/25 bg-white/70"><div className="section-wrap grid gap-9 md:grid-cols-2"><div><h2 className="text-3xl">Professional journey</h2><p className="mt-4 text-sm leading-7 text-navy/75">His professional journey has grown from property-record and land advisory work into wider guidance for housing societies. The supplied introduction covers title investigations, CTS property workflows, redevelopment planning and coordination between owners and professional teams.</p><h3 className="mt-6 text-xl">Leadership approach</h3><p className="mt-3 text-sm leading-7 text-navy/75">Listen to members, check the facts, explain the options and record each important decision. Progress should be followed through clear responsibilities and regular updates.</p></div><div><h2 className="text-3xl">Company values</h2><ul className="mt-4 space-y-3 text-sm leading-7 text-navy/75"><li>Clear information and honest communication.</li><li>Careful records and independent professional review.</li><li>Realistic planning and transparent project terms.</li><li>Respect for housing society members and landowners.</li></ul><div className="mt-6 rounded-xl border-l-4 border-gold bg-marble p-5"><h3 className="text-xl">Founder’s guiding principle</h3><p className="mt-3 text-sm leading-7 text-navy/75">Help owners and societies understand their property, protect their interests through proper advice and plan for long-term value.</p><p className="mt-2 text-[10px] text-navy/55">A plain-English summary of the supplied founder introduction.</p></div></div></div></section>
+    <section className="section-wrap"><h2 className="mb-5 text-3xl">Start with a clear conversation</h2><p className="mb-6 max-w-2xl text-sm leading-7 text-navy/75">Share your society’s present stage, available records and main concerns. We can discuss the next professional review needed.</p><CTAButton to="/contact-us">Book a Consultation</CTAButton></section>
+  </>;
 }

@@ -2,6 +2,7 @@ import { content as c } from '../data/content';
 import SectionHeading from '../components/ui/SectionHeading';
 import FadeIn from '../components/ui/FadeIn';
 import CTAButton from '../components/common/CTAButton';
+import { profileImage } from '../data/profileImages';
 /** Two-column company introduction using client-provided architecture. */
 export default function CompanyIntroSection() {
   return (
@@ -19,8 +20,8 @@ export default function CompanyIntroSection() {
         </div>
         <figure className="overflow-hidden rounded-2xl border border-gold/30 bg-white p-2 shadow-card">
           <img
-            src={`${import.meta.env.BASE_URL}assets/architecture.webp`}
-            alt="Architectural illustration supplied in the company profile"
+            src={profileImage('advisory-planning')}
+            alt="Professional consultation illustration from the supplied company profile"
             width="1024"
             height="1024"
             loading="lazy"

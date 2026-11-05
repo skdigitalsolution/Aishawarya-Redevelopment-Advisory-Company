@@ -3,6 +3,7 @@ import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import { process } from '../../data/process';
 import Icon from '../ui/Icon';
+import { profileImage, processImages, processActivities } from '../../data/profileImages';
 /** @param {{detailed?: boolean}} props Eight-stage interactive journey. */
 export default function ProcessJourney({ detailed = false }) {
   const [active, setActive] = useState(0);
@@ -48,9 +49,11 @@ export default function ProcessJourney({ detailed = false }) {
                   className="overflow-hidden"
                 >
                   <div className="border-t border-navy/5 px-5 pt-4 pb-6">
+                    {detailed && <figure className="mb-4"><img src={profileImage(processImages[i])} alt={`Company-profile illustration for ${step.title.toLowerCase()}`} width="900" height="560" loading="lazy" className="aspect-[16/9] w-full rounded-xl object-cover" /><figcaption className="mt-1 text-[10px] text-navy/50">Illustration from the company profile.</figcaption></figure>}
                     <Icon name={step.icon} className="mb-3 size-6 text-gold" />
                     <p className="text-sm leading-6">{step.description}</p>
                     <p className="mt-3 text-xs leading-6 text-navy/65">{step.detail}</p>
+                    {detailed && <><h4 className="mt-4 font-sans text-sm font-semibold">Important activities</h4><ul className="mt-2 space-y-2 text-xs leading-6 text-navy/75">{processActivities[i].map((text) => <li key={text}>• {text}</li>)}</ul><p className="mt-4 text-xs leading-6"><strong>How Aishwarya helps: </strong>We organize the information, coordinate the appointed professionals and help the society follow up on the next steps.</p></>}
                   </div>
                 </motion.div>
               )}

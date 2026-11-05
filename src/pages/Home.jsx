@@ -1,3 +1,5 @@
+import ImageSlider from '../components/common/ImageSlider';
+import { activitySlides } from '../data/profileImages';
 import HeroSection from '../sections/HeroSection';
 import FounderSection from '../sections/FounderSection';
 import ExpertiseSection from '../sections/ExpertiseSection';
@@ -12,6 +14,7 @@ export default function Home() {
   return (
     <>
       <HeroSection />
+      <div className="section-wrap !py-8"><ImageSlider slides={activitySlides} /></div>
       <FounderSection />
       <ExpertiseSection />
       <ProcessSection />

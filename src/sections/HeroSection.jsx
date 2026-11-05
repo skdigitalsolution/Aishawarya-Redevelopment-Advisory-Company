@@ -21,7 +21,7 @@ export default function HeroSection() {
   ];
 
   return (
-    <section className="relative isolate overflow-hidden border-b border-gold/30 bg-marble text-navy">
+    <section className="approved-home-hero relative isolate overflow-hidden border-b border-gold/30 bg-marble text-navy">
       <div
         role="img"
         aria-label="Illustrative Mumbai waterfront and residential architecture at dusk"

@@ -7,6 +7,7 @@ import WhatsAppButton from './components/layout/WhatsAppButton';
 import ScrollToTop from './components/layout/ScrollToTop';
 import { usePageMeta } from './hooks/usePageMeta';
 import { content as c } from './data/content';
+import InnerPageEffects from './components/common/InnerPageEffects';
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
 const FounderLeadership = lazy(() => import('./pages/FounderLeadership'));
@@ -46,24 +47,24 @@ function Site() {
           >
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/about-us" element={<About />} />
-              <Route path="/founder-leadership" element={<FounderLeadership />} />
-              <Route path="/services" element={<Services />} />
-              <Route path="/society-redevelopment" element={<SocietyRedevelopment />} />
-              <Route path="/self-redevelopment" element={<SelfRedevelopment />} />
-              <Route path="/land-banking" element={<LandBanking />} />
-              <Route path="/redevelopment-process" element={<RedevelopmentProcess />} />
-              <Route path="/projects" element={<Projects />} />
-              <Route path="/knowledge-centre" element={<KnowledgeCentre />} />
-              <Route path="/knowledge-centre/:slug" element={<Article />} />
-              <Route path="/contact-us" element={<Contact />} />
-              <Route path="/privacy" element={<Policy />} />
-              <Route path="/terms" element={<Policy />} />
+              <Route path="/about-us" element={<InnerPageEffects><About /></InnerPageEffects>} />
+              <Route path="/founder-leadership" element={<InnerPageEffects><FounderLeadership /></InnerPageEffects>} />
+              <Route path="/services" element={<InnerPageEffects><Services /></InnerPageEffects>} />
+              <Route path="/society-redevelopment" element={<InnerPageEffects><SocietyRedevelopment /></InnerPageEffects>} />
+              <Route path="/self-redevelopment" element={<InnerPageEffects><SelfRedevelopment /></InnerPageEffects>} />
+              <Route path="/land-banking" element={<InnerPageEffects><LandBanking /></InnerPageEffects>} />
+              <Route path="/redevelopment-process" element={<InnerPageEffects><RedevelopmentProcess /></InnerPageEffects>} />
+              <Route path="/projects" element={<InnerPageEffects><Projects /></InnerPageEffects>} />
+              <Route path="/knowledge-centre" element={<InnerPageEffects><KnowledgeCentre /></InnerPageEffects>} />
+              <Route path="/knowledge-centre/:slug" element={<InnerPageEffects><Article /></InnerPageEffects>} />
+              <Route path="/contact-us" element={<InnerPageEffects><Contact /></InnerPageEffects>} />
+              <Route path="/privacy" element={<InnerPageEffects><Policy /></InnerPageEffects>} />
+              <Route path="/terms" element={<InnerPageEffects><Policy /></InnerPageEffects>} />
               <Route path="/about" element={<Navigate to="/about-us" replace />} />
               <Route path="/process" element={<Navigate to="/redevelopment-process" replace />} />
               <Route path="/contact" element={<Navigate to="/contact-us" replace />} />
               <Route path="/testimonials" element={<Navigate to="/knowledge-centre#faqs" replace />} />
-              <Route path="*" element={<NotFound />} />
+              <Route path="*" element={<InnerPageEffects><NotFound /></InnerPageEffects>} />
             </Routes>
           </Suspense>
         </motion.div>

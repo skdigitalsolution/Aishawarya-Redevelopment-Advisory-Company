@@ -1,0 +1,20 @@
+/* Every rule is limited to inner pages; approved homepage styling is untouched. */
+.inner-page-effects .inner-reveal {
+  opacity: 0;
+  translate: 0 16px;
+  transition: opacity 550ms ease, translate 550ms cubic-bezier(.2,.7,.2,1);
+}
+.inner-page-effects .inner-reveal-visible { opacity: 1; translate: 0 0; }
+.inner-page-effects figure img { transition: scale 500ms ease, filter 500ms ease; }
+.inner-page-effects article.rounded-xl,
+.inner-page-effects article.rounded-2xl { transition: box-shadow 250ms ease, border-color 250ms ease; }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .inner-page-effects figure:hover img { scale: 1.025; filter: brightness(1.025); }
+  .inner-page-effects article.rounded-xl:hover,
+  .inner-page-effects article.rounded-2xl:hover { border-color: #d4a53799; box-shadow: 0 12px 28px #07142f12; }
+  .inner-page-effects a:not(:has(img)):hover { text-decoration-color: #d4a537; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .inner-page-effects .inner-reveal { opacity: 1; translate: none; transition: none; }
+  .inner-page-effects figure img { transition: none; }
+}

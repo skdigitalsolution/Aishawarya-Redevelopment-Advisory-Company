@@ -93,47 +93,47 @@ export const content = withBaseAssets({
     },
   ],
   why: [
-    {
-      title: 'Transparent Advisory',
-      description: 'Understand the scope, assumptions and next steps behind every recommendation.',
-      icon: 'Gem',
-    },
-    {
-      title: 'Independent Developer Evaluation',
-      description: 'Compare capability, track record and proposal terms against a common brief.',
-      icon: 'Building2',
-    },
-    {
-      title: 'Documentation Discipline',
-      description: 'Keep a clear record of property documents, decisions and commitments.',
-      icon: 'FileText',
-    },
-    {
-      title: 'Legal Coordination',
-      description: 'Work with qualified legal professionals to identify and address issues.',
-      icon: 'Scale',
-    },
-    {
-      title: 'Society-Centric Approach',
-      description: 'Keep member concerns and collective decisions at the centre of the process.',
-      icon: 'Users',
-    },
-    {
-      title: 'Budget Visibility',
-      description: 'Review cost assumptions, commitments and financial reporting with advisers.',
-      icon: 'Coins',
-    },
-    {
-      title: 'Professional Communication',
-      description: 'Use structured updates, meetings and documented follow-up.',
-      icon: 'Headphones',
-    },
-    {
-      title: 'Accountability Throughout the Process',
-      description: 'Define responsibilities and track agreed actions at each stage.',
-      icon: 'ShieldCheck',
-    },
-  ],
+  {
+    "title": "Multiple Professional Options",
+    "description": "Compare suitable PMCs and developers against the society’s needs.",
+    "icon": "Building2"
+  },
+  {
+    "title": "Society-Focused Support",
+    "description": "Keep member needs and the society’s decisions at the centre of the work.",
+    "icon": "Users"
+  },
+  {
+    "title": "Better Deal Negotiation",
+    "description": "Compare the full offer and seek clear written terms.",
+    "icon": "Handshake"
+  },
+  {
+    "title": "Proper Documentation",
+    "description": "Organize property papers, meeting records and agreed commitments.",
+    "icon": "FileText"
+  },
+  {
+    "title": "Legal Support",
+    "description": "Coordinate checks and questions with qualified legal professionals.",
+    "icon": "Scale"
+  },
+  {
+    "title": "Budget Clarity",
+    "description": "Review costs, payment commitments and changes with the right advisers.",
+    "icon": "Coins"
+  },
+  {
+    "title": "Clear Communication",
+    "description": "Share regular updates and follow up on member questions.",
+    "icon": "Headphones"
+  },
+  {
+    "title": "Responsibility Throughout the Process",
+    "description": "Record who is responsible and track agreed actions at each stage.",
+    "icon": "ShieldCheck"
+  }
+],
   expertise: [
     {
       title: 'Society Redevelopment',

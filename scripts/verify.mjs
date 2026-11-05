@@ -70,3 +70,42 @@ for (const item of navigation) {
 console.log(
   'PASS: content integrity, 20 services / 6 categories, 8 stages, 10 articles, navigation destinations, mobile/email/number validation and handoff encoding. No external form submissions performed.',
 );
+import { advisoryServices } from '../src/data/advisoryServices.js';
+import { advisoryGuides } from '../src/data/advisoryGuides.js';
+import { landFields } from '../src/data/landBanking.js';
+import { activitySlides, processImages } from '../src/data/profileImages.js';
+import fs from 'node:fs';
+assert.equal(advisoryServices.length, 20);
+assert.equal(new Set(advisoryServices.map(s => s.id)).size, 20);
+assert.equal(new Set(advisoryServices.map(s => s.category)).size, 6);
+const detailedIds = new Set(advisoryServices.map(s => s.id));
+const oldIds = new Set(advisoryServices.flatMap(s => s.aliases));
+for (const service of services) assert.ok(oldIds.has(service.id), `Legacy service link missing: ${service.id}`);
+for (const item of [...advisoryServices, ...advisoryGuides]) {
+  assert.ok(item.details.length >= 3 && item.help && item.why, item.id);
+  assert.ok(fs.existsSync(new URL(`../public/assets/profile/${item.image}.webp`, import.meta.url)), item.image);
+  for (const related of item.related ?? []) assert.ok(detailedIds.has(related.id));
+}
+assert.equal(activitySlides.length, 7);
+assert.equal(processImages.length, 8);
+for (const image of [...activitySlides.map(s => s.image), ...processImages]) assert.ok(fs.existsSync(new URL(`../public/assets/profile/${image}.webp`, import.meta.url)));
+const land = { fullName: 'Test Owner', mobile: '+91 9137304005', email: 'review@example.test', landLocation: 'Mumbai', landArea: '2 acres', zoning: 'Not sure', ownership: 'Individual owner' };
+assert.deepEqual(validateFields(landFields, land), {});
+assert.ok(validateFields(landFields, {...land,mobile:'123'})['mobile']);
+assert.ok(validateFields(landFields, {...land,email:'invalid'})['email']);
+assert.ok(validateFields(landFields, {...land,roadWidth:'-1'})['roadWidth']);
+assert.ok(validateFields(landFields, {...land,roadWidth:'Infinity'})['roadWidth']);
+assert.ok(validateFields(landFields, {...land,zoning:'Unsupported'})['zoning']);
+const landDraft = createDraft('Landowner and Agent Enquiry', landFields, land);
+const landHandoff = createHandoff('Landowner and Agent Enquiry', landDraft);
+assert.ok(decodeURIComponent(landHandoff.whatsapp).includes('Total Land Area (include units): 2 acres'));
+console.log('PASS: 20 detailed director services, legacy anchors, image files, related links and land enquiry validation/handoff.');
+import { pageCovers, articleCovers, getPageCover } from '../src/data/pageCovers.js';
+for (const cover of [...Object.values(pageCovers), ...Object.values(articleCovers)]) {
+ assert.ok(fs.existsSync(new URL(`../public${cover.image}`, import.meta.url)), cover.image);
+ assert.ok(!cover.image.includes('home-hero'), 'Inner cover should use contextual imagery');
+}
+assert.equal(getPageCover('/services').image, '/assets/profile/planning-meeting.webp');
+assert.equal(getPageCover('/knowledge-centre/property-title-verification').image, '/assets/profile/document-checks.webp');
+assert.ok(getPageCover('/unknown').image);
+console.log('PASS: contextual cover mappings for inner pages and all knowledge articles.');
