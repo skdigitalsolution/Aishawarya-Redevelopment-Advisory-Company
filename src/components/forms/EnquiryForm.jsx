@@ -5,7 +5,7 @@ import { content as c } from '../../data/content';
 import { createDraft, createHandoff, validateFields } from './formUtils';
 import FormField from './FormField';
 /** @param {{fields: object[], title: string, assessment?: boolean}} props Validated enquiry with real send or explicit handoff. */
-export default function EnquiryForm({ fields, title, assessment = false }) {
+export default function EnquiryForm({ fields, title, assessment = false, compact = false }) {
   const id = useId();
   const form = useRef(null);
   const busy = useRef(false);
@@ -71,12 +71,12 @@ export default function EnquiryForm({ fields, title, assessment = false }) {
       onSubmit={submit}
       noValidate
       aria-label={title}
-      className="rounded-2xl border border-navy/10 bg-white p-5 shadow-card sm:p-8"
+      className={compact ? 'consultation-glass rounded-2xl border border-white/80 bg-white/85 p-5 shadow-card backdrop-blur-md sm:p-6' : 'rounded-2xl border border-navy/10 bg-white p-5 shadow-card sm:p-8'}
     >
       <h3 className="mb-3 text-2xl font-semibold">{title}</h3>
       {assessment && <p className="mb-4 text-xs leading-6 text-navy/65">{c.form.notAdvice}</p>}
-      {!configured && <p className="mb-6 rounded-lg bg-marble p-3 text-xs leading-6 text-navy/70">{c.form.intro}</p>}
-      <div className="grid gap-5 sm:grid-cols-2">
+      {!configured && <p className={compact ? 'mb-3 text-[10px] leading-4 text-navy/70' : 'mb-6 rounded-lg bg-marble p-3 text-xs leading-6 text-navy/70'}>{compact ? 'Prepare your enquiry, then choose email or WhatsApp to send it.' : c.form.intro}</p>}
+      <div className={`grid sm:grid-cols-2 ${compact ? 'gap-3' : 'gap-5'}`}>
         {fields.map((field) => (
           <FormField
             key={field.name}
@@ -85,10 +85,11 @@ export default function EnquiryForm({ fields, title, assessment = false }) {
             value={values[field.name] ?? ''}
             error={errors[field.name]}
             onChange={change}
+            compact={compact}
           />
         ))}
       </div>
-      <p className="mt-5 text-[10px] leading-5 text-navy/55">{c.form.privacy}</p>
+      <p className={`${compact ? 'mt-3' : 'mt-5'} text-[10px] leading-5 text-navy/55`}>{c.form.privacy}</p>
       <button
         type="submit"
         disabled={state === 'loading' || state === 'sent'}

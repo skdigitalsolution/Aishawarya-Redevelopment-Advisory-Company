@@ -88,3 +88,76 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* Compact company and leadership panel. */
+.company-leadership {
+ background-color: #fafaf8;
+ background-image: linear-gradient(125deg, transparent 28%, #d4a53710 28.2%, transparent 28.6%), linear-gradient(25deg, #fff 12%, #eef0f140 48%, #fff 82%);
+}
+.company-leadership__label {
+ display: table;
+ border-bottom: 1px solid #d4a53780;
+ padding-bottom: 3px;
+ color: #8c641e;
+ font-size: 12px;
+ line-height: 1.5;
+ font-weight: 700;
+ text-transform: uppercase;
+ letter-spacing: 0.22em;
+}
+
+.consultation-field input,
+.consultation-field select,
+.consultation-field textarea {
+  padding-left: 2.25rem;
+  background: rgb(255 255 255 / 78%);
+  font-size: 12px;
+  min-height: 42px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.consultation-field input::placeholder,
+.consultation-field textarea::placeholder { color: #0b1f4bbf; opacity: 1; }
+.consultation-glass { box-shadow: inset 0 0 18px #ffffff90, 0 8px 30px #07142f35; }
+.consultation-glass button[type='submit'] { width: auto; min-width: 55%; margin: 12px auto 0; }
+.consultation-glass [role='status']:empty { margin: 0; }
+
+/* Cool, luminous waterfront treatment matching the supplied consultation reference. */
+.consultation-scene__image {
+  object-position: 22% 60%;
+  filter: grayscale(1) brightness(1.35) contrast(0.88);
+}
+.consultation-scene__lighting {
+  background:
+    radial-gradient(ellipse at 97% 1%, #fff6daee 0%, #f3dba077 2%, transparent 12%),
+    linear-gradient(144deg, transparent 14%, #f0cf7a70 14.15%, #fff6df99 14.3%, transparent 14.55%),
+    linear-gradient(147deg, transparent 18%, #f0cf7a55 18.12%, transparent 18.35%),
+    linear-gradient(90deg, #24477566 0%, #24477588 22%, #1a386bbb 44%, #4b608c77 100%);
+}
+.consultation-scene::after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+  inset: auto 0 0;
+  height: 2px;
+  background: linear-gradient(90deg, #d4a53755, #fff2c9, #d4a53755);
+  box-shadow: 0 0 12px #f0cf7a80;
+}
+.consultation-scene__copy { text-shadow: 0 1px 4px #07142f99; }
+.consultation-scene .consultation-glass {
+  border: 2px solid #ffffffcc;
+  background: linear-gradient(125deg, #f4f6ffeF, #e6eaf5e6 55%, #ffffffdf);
+  box-shadow: inset 0 0 22px #fff, 0 0 0 1px #a9bbd27a, 0 8px 24px #07142f33;
+}
+.consultation-scene .consultation-glass h3 { color: #07142f; }
+.consultation-scene .consultation-field input,
+.consultation-scene .consultation-field select,
+.consultation-scene .consultation-field textarea {
+  border-color: #c0c6d4;
+  box-shadow: inset 0 1px 3px #0b1f4b0b;
+  background: #ffffffb8;
+}
+@media (max-width: 767px) {
+  .consultation-scene__image { object-position: 30% center; }
+  .consultation-scene__copy { padding: 8px 0; }
+}

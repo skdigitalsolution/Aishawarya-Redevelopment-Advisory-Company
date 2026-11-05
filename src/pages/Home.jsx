@@ -1,5 +1,4 @@
 import HeroSection from '../sections/HeroSection';
-import CompanyIntroSection from '../sections/CompanyIntroSection';
 import FounderSection from '../sections/FounderSection';
 import ExpertiseSection from '../sections/ExpertiseSection';
 import ProcessSection from '../sections/ProcessSection';
@@ -13,7 +12,6 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <CompanyIntroSection />
       <FounderSection />
       <ExpertiseSection />
       <ProcessSection />

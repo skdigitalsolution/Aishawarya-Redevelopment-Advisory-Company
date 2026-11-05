@@ -4,6 +4,8 @@ import { content as c } from '../../data/content';
 export default function PageHero({ title, description, label = c.company.shortName }) {
   return (
     <header className="relative overflow-hidden border-b border-gold/35 bg-navy-dark px-5 py-14 text-white sm:px-8 lg:py-20">
+      <img src={`${import.meta.env.BASE_URL}assets/home-hero.png`} alt="" aria-hidden="true" width="1920" height="819" loading="eager" className="pointer-events-none absolute inset-0 size-full object-cover object-right opacity-40" />
+      <div className="pointer-events-none absolute inset-0 bg-linear-to-r from-navy-dark via-navy-dark/80 to-navy-dark/15" />
       <div className="pointer-events-none absolute -top-32 -right-20 size-96 rounded-full border border-gold/15" />
       <div className="relative mx-auto max-w-7xl">
         <p className="mb-7 flex flex-wrap gap-2 text-xs text-white/65">
