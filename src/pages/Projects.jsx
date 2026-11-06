@@ -6,12 +6,18 @@ import CTAButton from '../components/common/CTAButton';
 /** Category-aware case-study publishing state; no illustrative project is presented as completed work. */
 export default function Projects() {
   const [params, setParams] = useSearchParams();
-  const current = params.get('category') ?? 'all';
+  const requested = (params.get('category') ?? 'all').toLowerCase();
+  const category = projectData.categories.find((value) => value.toLowerCase().replaceAll(' ', '-') === requested) ?? 'All';
+  const current = category.toLowerCase().replaceAll(' ', '-');
+  const title = current === 'all' ? 'Projects & Case Studies' : `${category} Advisory Projects`;
   return (
     <>
       <PageHero
-        title="Projects & Case Studies"
-        description="Our role is advisory and professional coordination. Verified project stories will identify that role clearly."
+        title={title}
+        label={current === 'all' ? 'Our advisory work' : `${category} advisory`}
+        description={current === 'all'
+          ? 'Our role is advisory and professional coordination. Verified project stories will identify that role clearly.'
+          : `Explore ${category.toLowerCase()} advisory case studies. Project details and photographs will be published here after confirmation and permission.`}
       />
       <section className="section-wrap">
         <div role="group" aria-label="Project category" className="mb-8 flex flex-wrap gap-3">
@@ -36,7 +42,7 @@ export default function Projects() {
             : `${projectData.categories.find((x) => x.toLowerCase().replaceAll(' ', '-') === current) ?? 'Selected'} advisory`}
           : verified case studies awaiting publication.
         </p>
-        <ProjectShowcase />
+        <ProjectShowcase category={category} />
         <div className="mt-10">
           <CTAButton to="/contact-us">Discuss your advisory requirements</CTAButton>
         </div>
