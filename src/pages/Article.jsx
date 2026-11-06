@@ -4,6 +4,7 @@ import { content as c } from '../data/content';
 import PageHero from '../components/common/PageHero';
 import CTAButton from '../components/common/CTAButton';
 import NotFound from './NotFound';
+import SelfRedevelopmentWorkflow from '../components/common/SelfRedevelopmentWorkflow';
 /** Educational article with official source attribution and a case-specific advice boundary. */
 export default function Article() {
   const { slug } = useParams();
@@ -14,14 +15,14 @@ export default function Article() {
       <PageHero title={article.title} label={c.labels.knowledge} description={article.summary} />
       <article className="section-wrap max-w-4xl">
         <p className="mb-7 text-xs text-navy/50">Educational overview · Reviewed {article.reviewed}</p>
-        <img
+        {slug === 'self-redevelopment' ? <SelfRedevelopmentWorkflow /> : <img
           src={article.image}
           alt="Illustrative architecture from the supplied company profile"
           width="1024"
           height="1024"
           loading="lazy"
           className="mb-10 aspect-[2/1] w-full rounded-2xl object-cover"
-        />
+        />}
         {article.sections.map((section) => (
           <section key={section.title} className="mb-9">
             <h2 className="text-2xl font-semibold">{section.title}</h2>

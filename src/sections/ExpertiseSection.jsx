@@ -12,7 +12,7 @@ export default function ExpertiseSection() {
       <section className="section-wrap !py-9">
         <SectionHeading label="Our Redevelopment Services" title="End-to-End Real Estate Advisory Services" />
         <p className="-mt-3 mb-6 text-center text-xs leading-6 text-navy/75">A comprehensive portfolio of 20 professional services for housing societies, landowners and real estate stakeholders.</p>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="expertise-service-grid grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {featured.map((id, i) => {
             const service = services.find((item) => item.id === id);
             return <FadeIn key={id} delay={(i % 4) * 0.04}>

@@ -1,17 +1,18 @@
 import { Link } from 'react-router-dom';
 import FadeIn from '../ui/FadeIn';
+import SelfRedevelopmentWorkflow from './SelfRedevelopmentWorkflow';
 import { profileImage } from '../../data/profileImages';
 /** Image and plain-English service explanation; illustrations never imply project ownership. */
 export default function ServiceImageSection({ item, reverse = false }) {
   return (
     <section id={item.id} className="scroll-mt-28 border-b border-navy/10 py-9 last:border-0">
       {item.aliases?.map((alias) => <span key={alias} id={alias} className="block scroll-mt-28" />)}
-      <FadeIn className="grid items-center gap-7 md:grid-cols-2 lg:gap-12">
-        <figure className={reverse ? 'md:order-2' : ''}>
+      <FadeIn className={`grid items-center gap-7 lg:gap-12 ${item.workflow ? 'grid-cols-1' : 'md:grid-cols-2'}`}>
+        {item.workflow ? <SelfRedevelopmentWorkflow /> : <figure className={reverse ? 'md:order-2' : ''}>
           <img src={profileImage(item.image)} alt={item.alt || `Company-profile illustration of ${item.title.toLowerCase()}`} width="960" height="640" loading="lazy" decoding="async" className="max-h-[410px] w-full rounded-2xl border border-gold/25 object-cover shadow-card" />
           <figcaption className="mt-2 text-[10px] text-navy/55">Illustration from the supplied company profile.</figcaption>
-        </figure>
-        <div>
+        </figure>}
+        <div className={item.workflow ? 'mx-auto w-full max-w-4xl' : undefined}>
           {item.category && <p className="mb-3 text-[10px] font-semibold tracking-widest text-[#866019] uppercase">{item.category}</p>}
           <h2 className="text-2xl font-semibold sm:text-3xl">{item.title}</h2>
           <p className="mt-4 text-sm leading-7 text-navy/75">{item.description}</p>

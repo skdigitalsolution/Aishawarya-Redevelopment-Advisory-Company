@@ -1,7 +1,7 @@
 const scene = (image, position = 'center') => ({ image: `/assets/profile/${image}.webp`, position });
 /** Contextual supplied artwork, not evidence of completed company projects. */
 export const pageCovers = {
-  '/about-us': scene('advisory-planning'),
+  '/about-us': scene('developer-meeting'),
   '/founder-leadership': scene('committee-consultation'),
   '/services': scene('planning-meeting'),
   '/society-redevelopment': scene('society-meeting'),

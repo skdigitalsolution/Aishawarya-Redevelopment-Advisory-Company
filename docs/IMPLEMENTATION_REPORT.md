@@ -53,3 +53,13 @@ The shared PageHero now fills the visible screen below the unchanged 96px navbar
 ## Later requested update: contextual covers and inner-page motion
 
 The shared inner-page cover now chooses a relevant company-profile image for each route and each educational article instead of reusing the homepage skyline. Cover text and breadcrumbs are centered on a light panel. Gentle image entrance/parallax, scroll reveals and image/card hover treatments are limited to inner pages. Homepage hero and navigation remain unchanged. Reduced-motion support disables the added motion.
+
+## Self-redevelopment workflow image — 6 November 2026
+
+The newly supplied `self-redevelopment-guidence.png` is preserved as `public/assets/self-redevelopment-workflow.png`. A reusable full-width, uncropped figure replaces the earlier decorative image in self-redevelopment guidance on the Services, Founder & Leadership, Self-Redevelopment and related Knowledge Centre article routes. Mobile users can open the original in a new tab to read the small diagram labels. Existing article/service descriptions remain available; the duplicate self-redevelopment overview on its own page is consolidated.
+
+The graphic is a client-supplied planning illustration, not a verified project schedule. Its displayed “1460 Days” and “3 Years” totals differ. The caption labels timings as indicative; the final project schedule and applicable approval requirements need case-specific confirmation. The artwork itself was not edited.
+
+## Letter-by-letter banner text
+
+Shared TypingText now reveals individual characters, rather than complete words. Home and inner-page titles, supporting descriptions and small banner labels use the updated component. All characters stay in normal text flow throughout the animation so text space is reserved. Complete text remains accessible to assistive technology. Reduced-motion and print modes show all text immediately. Existing typefaces, font sizes and wording are preserved.

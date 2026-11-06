@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ChevronDown } from 'lucide-react';
 import { navigation } from '../../data/navigation';
@@ -7,6 +7,27 @@ import { content as c } from '../../data/content';
 export default function MobileMenu({ onClose }) {
   const [expanded, setExpanded] = useState(null);
   const { pathname } = useLocation();
+  useEffect(() => {
+    const oldOverflow = document.body.style.overflow;
+    const oldPadding = document.body.style.paddingRight;
+    const gap = window.innerWidth - document.documentElement.clientWidth;
+    if (gap > 0) document.body.style.paddingRight = `${(parseFloat(getComputedStyle(document.body).paddingRight) || 0) + gap}px`;
+    document.body.style.overflow = 'hidden';
+    const background = [document.querySelector('main'), document.querySelector('footer')].filter(Boolean);
+    const oldInert = background.map((node) => node.inert);
+    background.forEach((node) => { node.inert = true; });
+    return () => {
+      document.body.style.overflow = oldOverflow;
+      document.body.style.paddingRight = oldPadding;
+      background.forEach((node, i) => { node.inert = oldInert[i]; });
+    };
+  }, []);
+  useEffect(() => {
+    const desktop = window.matchMedia('(min-width: 1280px)');
+    const closeOnDesktop = () => { if (desktop.matches) onClose(); };
+    desktop.addEventListener('change', closeOnDesktop);
+    return () => desktop.removeEventListener('change', closeOnDesktop);
+  }, [onClose]);
   return (
     <nav
       id="mobile-navigation"
@@ -34,6 +55,7 @@ export default function MobileMenu({ onClose }) {
                       key={link.to}
                       to={link.to}
                       onClick={onClose}
+                      aria-current={pathname === link.to.split(/[?#]/)[0] ? 'page' : undefined}
                       className={`block rounded-lg px-3 py-3 text-sm text-white transition-colors hover:bg-gold hover:text-navy-dark focus:bg-gold focus:text-navy-dark ${pathname === link.to.split(/[?#]/)[0] ? 'bg-slate-600 font-semibold text-gold-light' : 'font-medium'}`}
                     >
                       {link.label}

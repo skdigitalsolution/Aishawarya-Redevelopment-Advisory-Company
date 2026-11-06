@@ -1,0 +1,20 @@
+.process-dialog {
+  position: fixed;
+  inset: 0;
+  width: min(720px, calc(100% - 32px));
+  max-width: none;
+  max-height: calc(100dvh - 40px);
+  margin: auto;
+  padding: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border: 1px solid #d4a53755;
+  border-radius: 20px;
+  background: white;
+  color: #0b1f4b;
+  box-shadow: 0 24px 90px #07142f55;
+}
+.process-dialog::backdrop { background: #07142f88; backdrop-filter: blur(5px); }
+@media (max-width: 639px) {
+  .process-dialog { width: calc(100% - 20px); max-height: calc(100dvh - 24px); border-radius: 16px; }
+}

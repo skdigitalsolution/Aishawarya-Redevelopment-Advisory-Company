@@ -1,0 +1,11 @@
+.hero-video-media { object-position: center; }
+.hero-video-playback { opacity: 0; transition: opacity 700ms ease; }
+.hero-video-playback.hero-video-ready { opacity: 1; }
+.approved-home-hero [aria-label='Hero actions']:focus-within { opacity: 1 !important; transform: none !important; }
+@media (max-width: 767px) {
+  .hero-video-media { object-position: 50% 45%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-video-playback { transition: none; }
+  .hero-typing-word { opacity: 1 !important; }
+}

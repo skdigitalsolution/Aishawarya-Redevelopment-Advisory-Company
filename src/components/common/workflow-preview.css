@@ -1,0 +1,23 @@
+.workflow-mobile-steps { display: none; }
+.workflow-preview {
+  position: fixed; inset: 0; width: 100%; max-width: none; height: 100dvh; max-height: none;
+  margin: 0; padding: 0; border: 0; color: #0b1f4b; background: #f7f6f2;
+}
+.workflow-preview[open] { display: flex; flex-direction: column; }
+.workflow-preview::backdrop { background: #07142fcc; }
+.workflow-preview-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: max(10px,env(safe-area-inset-top)) 16px 10px; background: white; border-bottom: 1px solid #d4a53755; }
+.workflow-preview-toolbar p { font-size: 15px; font-weight: 600; }
+.workflow-preview button { display: inline-flex; flex-shrink: 0; align-items: center; justify-content: center; width: 44px; height: 44px; border: 1px solid #0b1f4b25; border-radius: 10px; background: white; }
+.workflow-preview button:disabled { opacity: .4; }
+.workflow-preview button svg { width: 20px; height: 20px; }
+.workflow-preview-controls { display: flex; align-items: center; justify-content: center; gap: 12px; padding: 10px; }
+.workflow-preview-controls span { min-width: 45px; text-align: center; font-size: 14px; }
+.workflow-preview-scroll { flex: 1; min-height: 0; overflow: auto; overscroll-behavior: contain; touch-action: pan-x pan-y pinch-zoom; padding-bottom: max(16px,env(safe-area-inset-bottom)); }
+.workflow-preview-scroll img { display: block; height: auto; max-width: none; }
+@media (max-width: 1023px) {
+ .workflow-mobile-steps { display: block; margin: 16px 8px 4px; border-top: 1px solid #d4a53755; }
+ .workflow-mobile-steps summary { padding: 14px 0; cursor: pointer; font-size: 15px; font-weight: 600; }
+ .workflow-mobile-steps ol { display: grid; gap: 10px; padding-bottom: 12px; }
+ .workflow-mobile-steps li { display: flex; align-items: flex-start; gap: 10px; padding: 10px; border: 1px solid #0b1f4b15; border-radius: 10px; font-size: 15px; line-height: 1.6; }
+ .workflow-mobile-steps li span { font-size: 12px; color: #866019; padding-top: 3px; }
+}

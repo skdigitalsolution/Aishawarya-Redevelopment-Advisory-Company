@@ -1,0 +1,17 @@
+.site-navbar {
+  background: linear-gradient(115deg, rgb(var(--navbar-tint) / 94%), rgb(var(--navbar-tint) / 78%));
+  backdrop-filter: blur(18px) saturate(115%);
+  -webkit-backdrop-filter: blur(18px) saturate(115%);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 55%);
+  transition: background 250ms ease, box-shadow 250ms ease;
+}
+.site-navbar[data-scrolled='true'] {
+  background: linear-gradient(115deg, rgb(var(--navbar-tint) / 98%), rgb(248 249 250 / 94%));
+  box-shadow: 0 6px 24px rgb(7 20 47 / 12%), inset 0 1px 0 rgb(255 255 255 / 65%);
+}
+.site-navbar #mobile-navigation {
+  background: rgb(var(--navbar-tint) / 98%);
+}
+@media (prefers-reduced-motion: reduce) {
+  .site-navbar { transition: none; }
+}

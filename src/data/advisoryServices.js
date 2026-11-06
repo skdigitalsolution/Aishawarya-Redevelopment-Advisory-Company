@@ -50,7 +50,8 @@ export const advisoryServices = [
         "id": "construction-quality",
         "label": "Construction Progress and Quality Checks"
       }
-    ]
+    ],
+    "workflow": true
   },
   {
     "id": "tdr-allocation",

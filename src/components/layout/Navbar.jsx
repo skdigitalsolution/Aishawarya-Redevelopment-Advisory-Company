@@ -6,6 +6,9 @@ import { navigation } from '../../data/navigation';
 import NavDropdown from './NavDropdown';
 import MobileMenu from './MobileMenu';
 import BrandLogo from './BrandLogo';
+import { getPageCover } from '../../data/pageCovers';
+import { navigationTint } from '../../data/navigationTints';
+import './navbar-glass.css';
 /** Sticky navigation with shared desktop/mobile route data. No props. */
 export default function Navbar() {
   const [open, setOpen] = useState(null);
@@ -50,7 +53,9 @@ export default function Navbar() {
   return (
     <header
       ref={ref}
-      className={`sticky top-0 z-50 border-b border-gold/50 bg-white text-navy transition-shadow ${scrolled ? 'shadow-lg' : ''}`}
+      style={{ '--navbar-tint': navigationTint(location.pathname, getPageCover(location.pathname).image) }}
+      data-scrolled={scrolled}
+      className={`site-navbar sticky top-0 z-50 border-b border-gold/50 text-navy ${scrolled ? 'shadow-lg' : ''}`}
     >
       <a className="sr-only focus:not-sr-only focus:absolute focus:z-60 focus:bg-white focus:p-4 focus:text-navy" href="#main">
         {c.ui.skip}
@@ -60,7 +65,7 @@ export default function Navbar() {
           <BrandLogo />
           <span className="block">
             <span className="block font-heading text-[22px] leading-tight font-semibold tracking-wide text-[#866019] sm:text-2xl">{c.company.shortName}</span>
-            <span className="mt-1 block max-w-44 text-[11px] leading-4 font-medium text-[#866019] sm:max-w-48 sm:text-xs">
+            <span className="mt-1 block max-w-44 text-[11px] leading-4 font-medium text-navy sm:max-w-48 sm:text-xs">
               {c.company.descriptor}
             </span>
           </span>

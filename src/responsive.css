@@ -1,0 +1,80 @@
+/* Responsive-only corrections. Approved laptop/desktop presentation is unchanged. */
+@media (max-width: 767px) {
+  .section-wrap { padding-top: 40px; padding-bottom: 40px; }
+  .approved-home-hero h1 { font-size: clamp(2rem, 1.25rem + 3.6vw, 2.5rem); line-height: 1.12; }
+  .approved-home-hero .home-banner-glass { min-width: 0; max-width: 100%; }
+  .approved-home-hero [aria-label='Hero actions'] { width: 100%; }
+  .approved-home-hero [aria-label='Hero actions'] a { width: 100%; }
+  .approved-home-hero > div.relative { min-width: 0; }
+  .company-leadership .grid-cols-4 { grid-template-columns: repeat(2, minmax(0,1fr)); row-gap: 20px; }
+  .company-leadership .grid-cols-4 > :nth-child(odd) { border-left-width: 0; }
+  .company-leadership .grid-cols-4 p { max-width: 100%; overflow-wrap: anywhere; }
+  .company-leadership .grid-cols-3 p { overflow-wrap: anywhere; }
+  .image-slider-controls { display: grid; grid-template-columns: 1fr auto; gap: 8px; }
+  .image-slider-dots { grid-column: 1 / -1; grid-row: 2; }
+  .image-slider-dots button { width: 40px; height: 44px; }
+  .image-slider-copy { padding: 20px; }
+  .image-slider-copy h2 { font-size: clamp(1.65rem, 5.7vw, 2rem); }
+  .inner-page-cover { padding: 32px 16px; }
+  .inner-page-cover .banner-glass { padding: 28px 18px; }
+  .inner-page-cover h1 { overflow-wrap: anywhere; }
+  main :is(input, select, textarea) { min-height: 48px; font-size: 16px; }
+  .consultation-glass button[type='submit'] { width: 100%; min-height: 48px; }
+  main form > div.grid { gap: 16px; }
+  footer { padding-top: 32px; }
+  footer > div:first-child { gap: 26px; }
+  footer > div:first-child > div { min-width: 0; }
+  footer :is(a,p,span) { overflow-wrap: anywhere; }
+  footer a { min-height: 44px; }
+  footer > div:first-child > div:first-child > a > span { min-width: 0; }
+  .floating-whatsapp { bottom: max(12px, env(safe-area-inset-bottom)); right: 12px; width: 46px; height: 46px; }
+  .inner-page-cover > p:last-child { max-width: calc(100% - 76px); right: 70px; }
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .expertise-service-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .execution-support-grid { grid-template-columns: 1fr; }
+  .execution-support-grid h3 { overflow-wrap: anywhere; }
+}
+@media (max-width: 359px) {
+  .site-navbar > div { padding-left: 12px; padding-right: 12px; gap: 8px; }
+  .site-navbar > div > a:first-child { gap: 8px; }
+  .site-navbar > div > a:first-child > span:first-child { width: 56px; height: 56px; }
+  .site-navbar > div > a:first-child > span:last-child { min-width: 0; }
+  .site-navbar > div > a:first-child > span:last-child > span:first-child { font-size: 20px; }
+  .approved-home-hero > div.relative { padding-left: 16px; padding-right: 16px; }
+  .home-banner-glass { padding: 20px 16px; }
+}
+@media (max-width: 1279px) {
+  #mobile-navigation { max-height: calc(100dvh - 97px); overscroll-behavior: contain; padding-bottom: max(24px,env(safe-area-inset-bottom)); animation: mobile-menu-enter 180ms ease-out; }
+  #mobile-navigation a[aria-current='page'] { font-weight: 600; }
+}
+@keyframes mobile-menu-enter { from { opacity: 0; translate: 0 -6px; } to { opacity: 1; translate: 0 0; } }
+@media (hover: none) {
+  .expertise-service-grid a:hover { transform: none; }
+  .expertise-service-grid a:hover img { transform: none; }
+}
+@media (prefers-reduced-motion: reduce) { #mobile-navigation { animation: none; } }
+@media (max-width: 767px) {
+  .consultation-field label.sr-only { position: static; display: block; width: auto; height: auto; margin: 0 0 6px; padding: 0; overflow: visible; clip: auto; white-space: normal; }
+  .consultation-field > svg { top: 42px; }
+}
+@media (max-width: 767px) {
+  main .consultation-field :is(input, select, textarea) { min-height: 48px; font-size: 16px; }
+}
+@media (max-width: 767px) {
+  .image-slider-dots { column-gap: 2px; }
+  .image-slider-dots button { width: 32px; }
+  footer > div:first-child { grid-template-columns: repeat(2,minmax(0,1fr)); column-gap: 20px; }
+  footer > div:first-child > div:first-child,
+  footer > div:first-child > div:last-child { grid-column: 1 / -1; }
+  nav[aria-label='Find an advisory service'] a { display: inline-flex; min-height: 44px; align-items: center; }
+}
+@media (max-width: 767px) {
+  .consultation-field label.sr-only { clip-path: none; }
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  main .consultation-field :is(input, select, textarea) { min-height: 48px; font-size: 16px; }
+  .consultation-field label.sr-only { position: static; display: block; width: auto; height: auto; margin: 0 0 6px; padding: 0; overflow: visible; clip: auto; clip-path: none; white-space: normal; }
+  .consultation-field > svg { top: 42px; }
+  footer a { min-height: 44px; }
+}
