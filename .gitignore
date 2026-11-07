@@ -1,5 +1,7 @@
 node_modules/
 dist/
+hostinger/
+hostinger-upload.zip
 build/
 coverage/
 .env

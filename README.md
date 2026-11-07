@@ -38,6 +38,8 @@ Knowledge guides are educational, include official MahaRERA/BMC/Co-operation Dep
 
 ## Deployment and direct refreshes
 
+For Hostinger, run `npm run build:hostinger` and upload the contents of `hostinger/public_html/`. See [Hostinger deployment instructions](docs/HOSTINGER_DEPLOYMENT.md). This output is separate from the existing GitHub Pages build.
+
 Build output is `dist`. The host must serve existing files normally and return `/index.html` for application routes. `public/_redirects` supports Netlify/Cloudflare Pages; `vercel.json` supports Vercel. For Nginx use `try_files $uri $uri/ /index.html;`. Vite dev and preview support route fallback. Set a real canonical domain and social sharing image after hosting is chosen. Do not expose private client documents with a deployment.
 
 ## Verification

@@ -6,7 +6,7 @@ export const activitySlides = [
   { image: 'developer-meeting', title: 'Developer Selection', text: 'Compare experience, financial strength and the terms of each proposal.', to: '/services#developer-checks', alt: 'Illustration of a professional developer evaluation meeting' },
   { image: 'legal-review', title: 'Legal and Documentation', text: 'Organize ownership papers and coordinate checks with qualified legal advisers.', to: '/services#title-search', alt: 'Illustration of a legal adviser reviewing property records' },
   { image: 'site-inspection', title: 'Construction Monitoring', text: 'Follow site progress, agreed milestones and the issues that need attention.', to: '/services#construction-quality', alt: 'Illustration of engineers reviewing work at a construction site' },
-  { image: 'completed-building', title: 'Redevelopment and Handover', text: 'Coordinate inspections, completion records and the move into the new building.', to: '/services#handover-support', alt: 'Illustration of a modern residential building used to explain handover' },
+  { image: 'residential-building', title: 'Redevelopment and Handover', text: 'Coordinate inspections, completion records and the move into the new building.', to: '/services#handover-support', alt: 'Illustration of a modern residential building used to explain handover' },
 ];
 export const processImages = ['society-members', 'document-checks', 'pmc-presentation', 'planning-meeting', 'proposal-review', 'commercial-negotiation', 'site-inspection', 'new-building'];
 export const processActivities = [

@@ -55,6 +55,15 @@ export default function Footer() {
             <Mail className="size-4 shrink-0 text-gold-light" />
             <span className="break-all">{c.contact.email}</span>
           </a>
+          {c.contact.additionalEmails.map(({ label, address }) => (
+            <a key={address} href={`mailto:${address}`} className="flex gap-2 py-2 text-xs hover:text-gold-light">
+              <Mail className="size-4 shrink-0 text-gold-light" />
+              <span className="min-w-0">
+                <span className="mb-1 block text-[10px] text-white/65">{label}</span>
+                <span className="break-all">{address}</span>
+              </span>
+            </a>
+          ))}
           <a href={c.contact.whatsapp} target="_blank" rel="noopener noreferrer" className="flex gap-2 py-2 text-xs">
             <MessageCircle className="size-4 text-gold-light" />
             {c.ui.whatsapp}

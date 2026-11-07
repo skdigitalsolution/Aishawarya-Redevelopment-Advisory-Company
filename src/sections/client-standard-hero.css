@@ -1,0 +1,89 @@
+.client-standard-hero {
+  min-height: calc(100svh - 97px);
+  background: #24163d;
+}
+.client-standard-hero__background {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.client-standard-hero__logo {
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  width: clamp(108px, 10.5vw, 164px);
+  aspect-ratio: 1;
+  overflow: hidden;
+  border: 1px solid #f0cf7a99;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 6px 24px #07142f33;
+}
+.client-standard-hero__logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  scale: 1.18;
+}
+.client-standard-hero__copy {
+  position: absolute;
+  top: 34px;
+  left: 50%;
+  translate: -50% 0;
+  width: min(900px, calc(100% - 360px));
+  text-align: center;
+}
+.approved-home-hero.client-standard-hero h1 {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(20px, 1.15vw + 8px, 28px);
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: -0.015em;
+  color: #fff;
+  text-wrap: balance;
+  text-shadow: 0 2px 8px #07142f80;
+}
+@media (min-width: 640px) and (max-width: 1023px) {
+  .client-standard-hero__copy { width: calc(100% - 270px); top: 32px; }
+  .client-standard-hero__logo { right: 20px; top: 20px; width: 104px; }
+}
+@media (max-width: 639px) {
+  .client-standard-hero__logo { width: 92px; right: 16px; top: 16px; }
+  .client-standard-hero__copy { top: 132px; width: calc(100% - 36px); }
+  .approved-home-hero.client-standard-hero h1 { font-size: clamp(18px, 4.6vw, 21px); line-height: 1.5; }
+  .client-standard-hero__background { object-position: 55% center; }
+}
+@keyframes client-hero-letter-settle {
+  0% { opacity: 0; transform: translate3d(var(--letter-x), var(--letter-y), 0) rotate(var(--letter-angle)); }
+  65% { opacity: 1; transform: translate3d(0, var(--letter-overshoot), 0) rotate(calc(var(--letter-angle) * -0.12)); }
+  100% { opacity: 1; transform: translate3d(0, 0, 0) rotate(0deg); }
+}
+.client-standard-hero__copy .hero-typing-char {
+  --letter-x: -7px;
+  --letter-y: -14px;
+  --letter-angle: -16deg;
+  --letter-overshoot: 2px;
+  display: inline-block;
+  transform-origin: 50% 75%;
+  animation-name: client-hero-letter-settle;
+  animation-duration: 520ms;
+  animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.client-standard-hero__copy .hero-typing-char:nth-child(even) {
+  --letter-x: 7px;
+  --letter-y: 14px;
+  --letter-angle: 16deg;
+  --letter-overshoot: -2px;
+}
+@media (prefers-reduced-motion: reduce), print {
+  .client-standard-hero__copy .hero-typing-char { animation: none; opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .client-standard-hero__logo { transform: none !important; }
+}

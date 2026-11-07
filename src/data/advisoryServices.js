@@ -511,7 +511,7 @@ export const advisoryServices = [
     "id": "handover-support",
     "title": "Occupation Certificate and Handover Support",
     "category": "Construction Monitoring & Handover Support",
-    "image": "completed-building",
+    "image": "residential-building",
     "description": "The final stage brings together occupation permissions, inspections, possession records and ongoing building arrangements.",
     "details": [
       "Coordinate review of applicable occupation permissions and completion papers.",

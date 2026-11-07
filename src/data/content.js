@@ -22,6 +22,11 @@ export const content = withBaseAssets({
     phone: '+91-9137304005',
     phoneHref: 'tel:+919137304005',
     email: 'sachin.aishwaryaredevelopment@gmail.com',
+    additionalEmails: [
+      { label: 'Director', address: 'sachin@aishwaryaredevelopment.com' },
+      { label: 'Support', address: 'support@aishwaryaredevelopment.com' },
+      { label: 'General enquiries', address: 'info@aishwaryaredevelopment.com' },
+    ],
     address: 'Mumbai, Maharashtra, India',
     office: 'Office: Goregaon, Mumbai',
     whatsapp: 'https://wa.me/919137304005',
